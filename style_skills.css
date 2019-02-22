@@ -1,0 +1,113 @@
+.wrapper{
+  width; 100%;
+  margin: 0 auto;
+  position: relative;
+  padding: 30px 0 30px;
+  line-height: 28px;
+  font-size: 14px;
+}
+.wrapper h2{
+  text-align: center;
+  font-size: 30px;
+  text-transform: uppercase;
+  margin-bottom: 5%;
+  color: white;
+}
+.skills-area{
+  width: 100%;
+}
+.single-skills{
+  list-style: none;
+  padding-top: 25px;
+}
+.single-skills li{
+  margin-bottom: 40px;
+  height: 15px;
+}
+.single-skills li b{
+  position: relative;
+  top: -35px;
+  font-size: 20px;
+  color: white;
+}
+.line{
+  position: absolute;
+  background: #333;
+  margin: 2px 0;
+  height: 15px;
+}
+.one{
+  width: 85%;
+  -webkit-animation: one 2s ease-out;
+  -moz-animation: one 2s ease-out;
+  -o-animation: one 2s ease-out;
+  animation: one 2s ease-out;
+}
+.two{
+  width: 85%;
+  -webkit-animation: two 2s ease-out;
+  -moz-animation: two 2s ease-out;
+  -o-animation: two 2s ease-out;
+  animation: two 2s ease-out;
+}
+.three{
+  width: 85%;
+  -webkit-animation: three 2s ease-out;
+  -moz-animation: three 2s ease-out;
+  -o-animation: three 2s ease-out;
+  animation: three 2s ease-out;
+}
+.four{
+  width: 85%;
+  -webkit-animation: four 2s ease-out;
+  -moz-animation: four 2s ease-out;
+  -o-animation: four 2s ease-out;
+  animation: four 2s ease-out;
+}
+.five{
+  width: 85%;
+  -webkit-animation: five 2s ease-out;
+  -moz-animation: five 2s ease-out;
+  -o-animation: five 2s ease-out;
+  animation: five 2s ease-out;
+}
+@-moz-keyframes one{
+  0%(
+    width: 0;
+    )
+    100%(
+      width: 85%;
+      )
+}
+@-moz-keyframes two{
+  0%(
+    width: 0;
+    )
+    100%(
+      width: 85%;
+      )
+}
+@-moz-keyframes three{
+  0%(
+    width: 0;
+    )
+    100%(
+      width: 85%;
+      )
+}
+@-moz-keyframes four{
+  0%(
+    width: 0;
+    )
+    100%(
+      width: 85%;
+      )
+}
+@-moz-keyframes five{
+  0%(
+    width: 0;
+    )
+    100%(
+      width: 85%;
+      )
+}
