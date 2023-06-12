@@ -1,0 +1,1081 @@
+/***
+
+Project Name : Amirul Amri Portfolio
+Project Description : Create portfolio from scratch using HTML/CSS/JS
+Project Creator : Amirul Amri
+Version : 1.0.0
+Last update : 12 June 2023
+
+***/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --primary-bg-color: #081b29;
+    --secondary-bg-color: #112e42;
+    --primary-text-color: #ededed;
+    --secondary-text-color: #00abf0;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+body {
+    background: var(--primary-bg-color);
+    color: var(--primary-text-color);
+}
+
+a:disabled, a.btn.disabled {
+    cursor: not-allowed;
+}
+
+/* Header */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 10%;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+
+    transition: .3s;
+}
+
+.header.sticky {
+    background: var(--primary-bg-color);
+}
+
+.logo {
+    position: relative;
+    font-size: 2.5rem;
+    color: var(--primary-text-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.navbar {
+    position: relative;
+}
+
+.navbar a {
+    font-size: 18px;
+    color: var(--primary-text-color);
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 35px;
+
+    transition: .3s;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: var(--secondary-text-color);
+}
+
+#menu-icon {
+    position: relative;
+    font-size: 3.6rem;
+    color: var(--primary-text-color);
+    cursor: pointer;
+    display: none;
+}
+/* End of header */
+
+section {
+    min-height: 100vh;
+    padding: 10rem 9% 2rem;
+}
+
+.btn-box {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 34.5rem;
+    height: 5rem;
+}
+
+.btn-box.btns {
+    justify-content: center;
+    width: 100%;
+}
+
+.btn-box .btn {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 15rem;
+    height: 100%;
+    background: var(--secondary-text-color);
+    border: .2rem solid var(--secondary-text-color);
+    border-radius: .8rem;
+    font-size: 1.8rem;
+    color: var(--primary-bg-color);
+    font-weight: 600;
+    letter-spacing: .1rem;
+    z-index: 1;
+    overflow: hidden;
+
+    transition: .5s;
+}
+
+.btn-box .btn:hover {
+    color: var(--secondary-text-color);
+}
+
+.btn-box .btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--primary-bg-color);
+    z-index: -1;
+
+    transition: .5s;
+}
+
+.btn-box .btn:hover::before {
+    width: 100%;
+}
+
+/* Home styling */
+.home {
+    display: flex;
+    background: url('../images/amirul-amri-portfolio-banner.png') no-repeat;
+    background-size: cover;
+    background-position: center;
+    align-items: center;
+    padding: 0 9%;
+}
+
+.home-content {
+    max-width: 60rem;
+    z-index: 99;
+}
+
+.home-content h1 {
+    position: relative;
+    display: inline-block;
+    font-size: 5.6rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.home-content h1 span {
+    color: var(--primary-text-color);
+}
+
+.home-content .text-animate {
+    position: relative;
+    width: 32.8rem;
+}
+
+.home-content .text-animate h3 {
+    font-size: 3.2rem;
+    font-weight: 700;
+    color: transparent;
+    -webkit-text-stroke: .7px var(--secondary-text-color);
+    background-image: linear-gradient(var(--secondary-text-color), var(--secondary-text-color));
+    background-repeat: no-repeat;
+    -webkit-background-clip: text;
+    background-position: -33rem 0;
+}
+
+.home.show-animate .home-content .text-animate h3 {
+    animation: homeBgText 6s linear infinite;
+    animation-delay: 1s;
+}
+
+.home-content .text-animate h3::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    border-right: 2px solid var(--secondary-text-color);
+    z-index: -1;
+}
+
+.home.show-animate .home-content .text-animate h3::before {
+    animation: homeCursorText 6s linear infinite;
+    animation-delay: 1s;
+}
+
+.home-content p {
+    position: relative;
+    font-size: 1.6rem;
+    margin: 2rem 0 4rem;
+}
+
+.home-skills {
+    position: relative;
+    width: 40rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.home-skills > * {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-skills h3 {
+    font-size: 1.5rem;
+}
+
+.home-skills h3 span {
+    margin-left: 2rem;
+    font-size: 3rem;
+    font-weight: 200;
+}
+
+.home-skills > span:not(.animate) {
+    width: 4rem;
+    height: 4rem;
+    background: transparent;
+    border: .2rem solid var(--secondary-text-color);
+    border-radius: 50%;
+    font-size: 2rem;
+    color: var(--secondary-text-color);
+    text-decoration: none;
+    z-index: 1;
+    overflow: hidden;
+
+    transition: .5s;
+}
+
+.home-skills > span:hover,
+.home-sci a:hover {
+    color: var(--primary-bg-color);
+}
+
+.home-skills > span::before,
+.home-sci a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--secondary-text-color);
+    z-index: -1;
+
+    transition: .5s;
+}
+
+.home-skills > span:hover::before,
+.home-sci a:hover::before {
+    width: 100%;
+}
+
+.home-sci {
+    position: absolute;
+    bottom: 2rem;
+    width: 17rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.home-sci a {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    background: transparent;
+    border: .2rem solid var(--secondary-text-color);
+    border-radius: 50%;
+    font-size: 2rem;
+    color: var(--secondary-text-color);
+    text-decoration: none;
+    z-index: 1;
+    overflow: hidden;
+
+    transition: .5s;
+}
+
+.home-imgHover {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45%;
+    height: 100%;
+    background: transparent;
+
+    transition: 3s;
+    animation: manipActiveHover .1s forwards;
+    animation-delay: 4s;
+    pointer-events: none;
+}
+
+.home-imgHover:hover {
+    background: var(--primary-bg-color);
+    opacity: .8;
+}
+/* End of home styling */
+
+/* About styling */
+.about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+    background: var(--secondary-bg-color);
+    padding-bottom: 6rem;
+}
+
+.heading {
+    position: relative;
+    font-size: 5rem;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+span {
+    color: var(--secondary-text-color);
+}
+
+.about-img {
+    position: relative;
+    width: 25rem;
+    height: 25rem;
+    border-radius: 50%;;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-img img {
+    width: 90%;
+    border-radius: 50%;
+    border: .2rem solid var(--secondary-text-color);
+}
+
+.about-img .circle-spin {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(0);
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border-top: .2rem solid var(--secondary-bg-color);
+    border-bottom: .2rem solid var(--secondary-bg-color);
+    border-left: .2rem solid var(--secondary-text-color);
+    border-right: .2rem solid var(--secondary-text-color);
+
+    animation: aboutSpinner 8s linear infinite;
+}
+
+.about-content {
+    text-align: center;
+}
+
+.about-content h3 {
+    position: relative;
+    display: inline-block;
+    font-size: 2.6rem;
+}
+
+.about-content p {
+    position: relative;
+    font-size: 1.6rem;
+    margin: 2rem 0 3rem;
+}
+
+.about .btn-box {
+    display: inline-block;
+    width: 15rem;
+}
+
+.btn-box.btns a::before {
+    background: var(--secondary-bg-color);
+}
+/* End of about styling */
+
+/* Journey styling */
+.journey {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: auto;
+    padding-bottom: 5rem;
+}
+
+.journey .journey-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5rem;
+}
+
+.journey .journey-column {
+    flex: 1 1 40rem;
+}
+
+.journey-row .journey-column .title {
+    position: relative;
+    display: inline-block;
+    font-size: 2.5rem;
+    margin: 0 0 1.5rem 2rem;
+}
+
+.journey-column .journey-box {
+    position: relative;
+    border-left: .2rem solid var(--secondary-text-color);
+}
+
+.journey-box .journey-content {
+    position: relative;
+    padding-left: 2rem;
+}
+
+.journey-box .journey-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -1.1rem;
+    width: 2rem;
+    height: 2rem;
+    background: var(--secondary-text-color);
+    border-radius: 50%;
+}
+
+.journey-content .content {
+    position: relative;
+    padding: 1.5rem;
+    border: .2rem solid var(--secondary-text-color);
+    border-radius: .6rem;
+    margin-bottom: 2rem;
+    overflow: hidden;
+}
+
+.journey-content .content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--secondary-bg-color);
+    z-index: -1;
+
+    transition: .5s;
+}
+
+.journey-content .content:hover::before {
+    width: 100%;
+}
+
+.journey-content .content .year {
+    font-size: 1.5rem;
+    color: var(--secondary-text-color);
+    padding-bottom: .5rem;
+}
+
+.journey-content .content .year i {
+    padding-right: .5rem;
+}
+
+.journey-content .content h3 {
+    font-size: 2rem;
+}
+
+.journey-content .content p {
+    font-size: 1.6rem;
+    padding-top: .5rem;
+}
+/* End of journey styling */
+
+/* Projects styling */
+.projects {
+    min-height: auto;
+    padding-bottom: 7rem;
+    background: var(--secondary-bg-color);
+}
+
+.projects h2 {
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.projects .projects-row {
+    display: flex;
+    align-items: center;
+    margin: 4rem 2rem;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.projects-row .projects-column {
+    position: relative;
+    flex: 1 1 40rem;
+    border: .2rem solid var(--secondary-text-color);
+    border-radius: .6rem;
+    z-index: 1;
+}
+
+.projects-column .projects-img {
+    position: relative;
+    z-index: 1;
+}
+
+.projects-row .projects-column:nth-child(1) {
+    border: none;
+    max-width: 60rem;
+}
+
+.projects .projects-row:nth-child(odd) .projects-column:nth-child(1) {
+    order: 2;
+}
+
+.projects .projects-row:nth-child(odd) .projects-column:nth-child(2) {
+    order: 1;
+}
+
+.projects-row .projects-column:nth-child(2)::before,
+.projects-row .projects-column .projects-img::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--primary-bg-color);
+    z-index: -1;
+
+    transition: .5s;
+}
+
+.projects-row .projects-column .projects-img::before {
+    z-index: 2;
+    opacity: .4;
+}
+
+.projects-row .projects-column:nth-child(2):hover::before,
+.projects-row .projects-column .projects-img:hover::before {
+    width: 100%;
+}
+
+.projects-column .title {
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2.5rem;
+    margin: 0 0 1.5rem;
+}
+
+.projects-column .projects-box {
+    position: relative;
+}
+
+.projects-box .projects-content {
+    position: relative;
+    text-align: center;
+    padding: 1.5rem 1.5rem;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.projects-img {
+    width: 100%;
+    height: 25rem;
+    padding: 0;
+}
+
+.projects-content img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.projects-content p {
+    position: relative;
+    font-size: 1.6rem;
+}
+
+.projects-content h3 {
+    font-size: 1.7rem;
+    display: inline-block;
+    margin-top: 2rem;
+    margin-right: 2rem;
+}
+
+.projects-content h3 ~ h3 {
+    margin-right: 0;
+}
+
+.projects-content .projects-btn {
+    position: relative;
+    text-align: center;
+}
+
+.projects-btn a {
+    position: relative;
+    display: inline-block;
+    margin-top: 2rem;
+    margin-right: 2rem;
+    background: transparent;
+    font-size: 1.6rem;
+    color: var(--secondary-text-color);
+    z-index: 1;
+}
+
+.projects-btn a ~ a {
+    margin-right: 0;
+}
+/* End of projects styling */
+
+/* Contact styling */
+.contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    padding-bottom: 7rem;
+}
+
+.contact h2, {
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.contact p {
+    position: relative;
+    font-size: 1.6rem;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.contact form {
+    max-width: 70rem;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact form .input-box {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.contact form .input-box .input-field {
+    position: relative;
+    width: 49%;
+    margin: .8rem 0;
+}
+
+.contact form .input-box .input-field input,
+.contact form .textarea-field textarea {
+    width: 100%;
+    height: 100%;
+    padding: 1.5rem;
+    font-size: 1.5rem;
+    color: var(--primary-text-color);
+    background: transparent;
+    border-radius: .6rem;
+    border: .2rem solid var(--secondary-text-color);
+}
+
+.contact form .input-box .input-field input::placeholder,
+.contact form .textarea-field textarea::placeholder {
+    color: var(--primary-text-color);
+}
+
+.contact form .focus {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--secondary-bg-color);
+    border-radius: .6rem;
+    z-index: -1;
+
+    transition: .5s;
+}
+
+.contact form .input-box .input-field input:focus~.focus,
+.contact form .input-box .input-field input:valid~.focus,
+.contact form .textarea-field textarea:focus~.focus,
+.contact form .textarea-field textarea:valid~.focus {
+    width: 100%;
+}
+
+.contact form .textarea-field {
+    position: relative;
+    margin: .8rem 0 2.7rem;
+    display: flex;
+}
+
+.contact form .textarea-field textarea {
+    resize: none;
+}
+
+.contact form .btn-box.btns {
+    position: relative;
+    display: inline-block;
+    width: auto;
+}
+
+.contact form .btn-box.btns .btn {
+    cursor: pointer;
+}
+/* End of contact styling */
+
+/* Footer styling */
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 2rem 9%;
+    background: var(--secondary-bg-color);
+}
+
+.footer-text,
+.footer-iconTop {
+    position: relative;
+}
+
+.footer-text p {
+    font-size: 1.6rem;
+}
+
+.footer-iconTop a {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: .8rem;
+    background: var(--secondary-text-color);
+    border: .2rem solid var(--secondary-text-color);
+    border-radius: .6rem;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.footer-iconTop a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--secondary-bg-color);
+    z-index: -1;
+
+    transition: .5s;
+}
+
+.footer-iconTop a:hover::before {
+    width: 100%;
+}
+
+.footer-iconTop a i {
+    font-size: 2.4rem;
+    colod: var(--primary-bg-color);
+
+    transition: .5s;
+}
+
+.footer-iconTop a:hover i {
+    color: var(--secondary-text-color)
+}
+/* End of footer styling */
+
+/* Animation reload and scroll */
+.animate {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--primary-bg-color);
+    z-index: 98;
+}
+
+.animate.home-img {
+    width: 50%;
+}
+
+.home.show-animate .animate {
+    animation: showRight 1s ease forwards;
+    animation-delay: calc(.3s * var(--i));
+}
+
+.animate.scroll {
+    transition: 1s ease;
+    transition-delay: calc(.3s / var(--i));
+    animation: none;
+}
+/* End of animation */
+
+/* Breakpoints */
+@media (max-width: 1200px) {
+    html {
+        font-size: 55%;
+    }
+}
+
+@media (max-width: 991px) {
+    .header {
+        padding: 2rem 4%;
+    }
+
+    section {
+        padding: 10rem 4% 2rem;
+    }
+
+    .home {
+        padding: 0 4%;
+    }
+
+    .footer {
+        padding: 2rem 4%;
+    }
+}
+
+@media (max-width: 851px) {
+    .animate.home-img {
+        width: 55%;
+    }
+
+    .projects .projects-row:nth-child(odd) .projects-column:nth-child(1) {
+        order: 1;
+    }
+
+    .projects .projects-row:nth-child(odd) .projects-column:nth-child(2) {
+        order: 2;
+    }
+}
+
+@media (max-width: 822px) {
+    .projects-row .projects-column:nth-child(1) {
+        max-width: 100%;
+    }
+    
+    .projects-content.projects-img {
+        height: 35rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        background: var(--primary-bg-color);
+    }
+
+    #menu-icon {
+        display: block;
+    }
+
+    .navbar {
+        position: absolute;
+        top: 100%;
+        left: -100%;
+        width: 100%;
+        padding: 1rem 4%;
+        background: var(--secondary-text-color);
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
+        z-index: 1;
+
+        transition: .25s ease;
+        transition-delay: .25s;
+    }
+
+    .navbar.active {
+        left: 0;
+
+        transition-delay: 0s;
+    }
+
+    .navbar .active-nav {
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: var(--primary-bg-color);
+        border-top: .1rem solid rgba(0, 0, 0, .2);
+        z-index: -1;
+
+        transition: .25s ease;
+        transition-delay: 0s;
+    }
+
+    .navbar.active .active-nav {
+        left: 0;
+
+        transition-delay: .25s;
+    }
+
+    .navbar a {
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+
+        transform: translateX(-20rem);
+        transition: .25s ease;
+        transition-delay: 0s;
+    }
+
+    .navbar.active a {
+        transform: translateX(0);
+        transition-delay: .25s;
+    }
+
+    .home-imgHover {
+        pointer-events: none;
+        background: var(--primary-bg-color);
+        opacity: .6;
+    }
+}
+
+@media (max-width: 520px) {
+    html {
+        font-size: 50%;
+    }
+
+    .home-content h1 {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .home-sci {
+        width: 160px;
+    }
+
+    .home-sci a {
+        width: 38px;
+        height: 38px;
+    }
+
+    /* .projects-content.projects-img {
+        width: 40rem;
+        height: 17.4rem;
+    } */
+}
+
+@media (max-width: 462px) {
+    .home-content h1 {
+        font-size: 5.2rem;
+    }
+
+    .journey {
+        padding: 10rem 4% 5rem 5%;
+    }
+
+    .contact form .input-box .input-field {
+        width: 100%;
+    }
+
+    .footer {
+        flex-direction: column-reverse;
+    }
+
+    .footer p {
+        margin-top: 2rem;
+        text-align: center;
+    }
+}
+
+@media (max-width: 371px) {
+    .home {
+        justify-content: center;
+    }
+
+    .home-content {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .home-content h1 {
+        font-size: 5rem;
+    }
+}
+
+/* Keyframes */
+@keyframes showRight {
+    100% {
+        width: 0;
+    }
+}
+
+@keyframes manipActiveHover {
+    100% {
+        pointer-events: auto;
+    }
+}
+
+@keyframes homeBgText {
+
+    0%,
+    10%,
+    100% {
+        background-position: -33rem 0;
+    }
+
+    65%,
+    85% {
+        background-position: 0 0;
+    }
+}
+
+@keyframes homeCursorText {
+
+    0%,
+    10%,
+    100% {
+        width: 0;
+    }
+
+    65%,
+    78%,
+    85% {
+        width: 100%;
+        opacity: 1;
+    }
+
+    75%,
+    81% {
+        opacity: 0;
+    }
+}
+
+@keyframes aboutSpinner {
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+/* End of keyframes */
