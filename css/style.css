@@ -3,7 +3,7 @@
 Project Name : Amirul Amri Portfolio
 Project Description : Create portfolio from scratch using HTML/CSS/JS
 Project Creator : Amirul Amri
-Version : 1.0.2
+Version : 1.0.3
 Last update : 9 October 2024
 
 ***/
@@ -364,7 +364,7 @@ span {
     width: 25rem;
     height: 25rem;
     border-radius: 50%;;
-    display: none;
+    display: flex;
     justify-content: center;
     align-items: center;
 }
