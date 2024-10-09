@@ -3,7 +3,7 @@
 Project Name : Amirul Amri Portfolio
 Project Description : Create portfolio from scratch using HTML/CSS/JS
 Project Creator : Amirul Amri
-Version : 1.0.3
+Version : 1.0.4
 Last update : 9 October 2024
 
 ***/
@@ -160,7 +160,7 @@ section {
 /* Home styling */
 .home {
     display: flex;
-    background: url('../images/amirul-amri-portfolio-banner.png') no-repeat;
+    /* background: url('../images/amirul-amri-portfolio-banner.png') no-repeat; */
     background-size: cover;
     background-position: center;
     align-items: center;
